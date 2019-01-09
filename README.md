@@ -1,6 +1,6 @@
 # Happy Data Year
 
-(Happy Data Year)[https://boosters.pro/champ_21] - новогодний чемпионат по
+[Happy Data Year](https://boosters.pro/champ_21) - новогодний чемпионат по
 анализу данных от Росбанка.
 
 Вам предстоит предсказать индекс популярности геолокации для размещения
