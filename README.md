@@ -1,5 +1,7 @@
 # Happy Data Year
 
+## Описание
+
 [Happy Data Year](https://boosters.pro/champ_21) - новогодний чемпионат по
 анализу данных от Росбанка.
 
@@ -11,7 +13,7 @@
 банкомата. В тестовой выборке еще две с половиной тысячи банкоматов, разделенных
 поровну на публичную и приватную часть.
 
-## Подсказки и разъяснения от организоторов
+## Подсказки от организоторов
 
     Александр Мамаев
     Все ответы одним постом:
@@ -55,13 +57,28 @@
         заняться написанием эффективного парсера или генерацией  оригинальных
         геопризнаков. Номинации в контесте на любой вкус.
 
-## Необходимые компоненты
+## Подготовка
 
-https://github.com/mozilla/geckodriver/releases
-https://sites.google.com/a/chromium.org/chromedriver/downloads
+### Виртуальное окружение
 
-tar xf resource/geckodriver-v0.23.0-linux64.tar.gz -C .venv/bin/
+    $ python3 -m venv .venv
+    $ source .venv/bin/activate
+    $ pip install --upgrade -e .[dev]
 
+### Jupyter Notebook
+
+    $ jupyter-notebook
+
+### Редактор
+
+    $ PYTHONPATH=$PYTHONPATH:.venv/lib/python3.6/site-packages/ vim
+
+### Драйвер для `selenium`
+
+Скачать [geckodriver](https://github.com/mozilla/geckodriver/releases)
+ или [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+
+    $ tar xf resource/geckodriver-v0.23.0-linux64.tar.gz -C .venv/bin/
 
 ## Банки
 
