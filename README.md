@@ -63,15 +63,15 @@
 
     $ python3 -m venv .venv
     $ source .venv/bin/activate
-    $ pip install --upgrade -e .[dev]
+    (.venv) $ pip install --upgrade -e .[dev]
 
 ### Jupyter Notebook
 
-    $ jupyter-notebook
+    (.venv) $ jupyter-notebook
 
 ### Редактор
 
-    $ PYTHONPATH=$PYTHONPATH:.venv/lib/python3.6/site-packages/ vim
+    (.venv) $ PYTHONPATH=$PYTHONPATH:.venv/lib/python3.6/site-packages/ vim
 
 ### Драйвер для `selenium`
 
@@ -94,7 +94,7 @@
 выгружаем интересующие объекты (например, [bank](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbank),
 [atm](https://wiki.openstreetmap.org/wiki/RU:Tag:amenity%3Datm), [place](https://wiki.openstreetmap.org/wiki/RU:Key:place)).
 
-    $ ./scripts/10-places.sh
+    (.venv) $ ./scripts/10-places.sh
 
 Протестировать запросы можно в [Overpass-Turbo](https://overpass-turbo.eu/).
 
@@ -127,8 +127,12 @@
     'деревня Веледниково, городской округ Истра, Московская область, Россия'
 
 Чтобы уточнить адреса и привести их к одному формату, можно попробовать узнать
-адреса для каждой отдельной точки с помощью [reverse geocoding](https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=47.88559199&lon=134.961981).
+адреса для каждой отдельной точки с помощью [reverse geocoding](https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=46.9409981&lon=142.738146694431).
 Бонусом идет описание места.
+
+    (.venv) $ ./scripts/20-reverce-addresses.py
+
+Пример полученных данных:
 
 ```json5
 {
@@ -169,18 +173,35 @@
 }
 ```
 
-## Банки
+### Адреса банкоматов Росбанка и партнеров
 
-- [Банкоматы | Росбанк](https://www.rosbank.ru/ru/dbo/dbo-personal/atms/)
+На сайте Росбанка есть [список](https://www.rosbank.ru/ru/atms/) банкоматов
+самого Росбанка и его партнеров.
 
-## Python
+![Местоположение банкоматов](doc/figures/rosbank.png?raw=true "Местоположение банкоматов")
 
-- [Visualizing named colors — Matplotlib 3.0.2 documentation](https://matplotlib.org/gallery/color/named_colors.html)
-- [DinoTools/python-overpy: Python Wrapper to access the Overpass API](https://github.com/DinoTools/python-overpy)
-- [ipyleaflet: Interactive maps in the Jupyter notebook — ipyleaflet documentation](https://ipyleaflet.readthedocs.io/en/latest/index.html)
-- [mocnik-science/osm-python-tools: A library to access OpenStreetMap related services](https://github.com/mocnik-science/osm-python-tools)
+Для получения этой информации используем библиотеку `selenium`.
 
-## Kaggle
+    (.venv) $ ./scripts/30-rosbank-atm.py
 
-- [House Prices: Advanced Regression Techniques | Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/kernels)
-- [New York City Taxi Fare Prediction | Kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/kernels)
+Пример полученных данных:
+
+```json5
+[
+    {
+        "region": "Алтайский край",
+        "city": "Барнаул",
+        "bank": "Росбанк",
+        "address_title": "Тракт Павловский 192А",
+        "address_type": "Гипермаркет \"Леруа Мерлен\"",
+        "working_time": "Пн-Вс:08:00-22:00",
+        "currency": "Выдача (₽)\nЧасть операций недоступна",
+        "address_metro": "",
+        "address_map": "https://www.rosbank.ru/ru/atms/?showonmap=82712",
+        "script_text": " ... "
+        "long": "83.632452",
+        "lat": "53.350284"
+    }
+]
+```
+
