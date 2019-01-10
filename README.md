@@ -1,5 +1,3 @@
-# Happy Data Year
-
 ## Описание
 
 [Happy Data Year](https://boosters.pro/champ_21) - новогодний чемпионат по
