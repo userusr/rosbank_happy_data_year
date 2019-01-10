@@ -27,6 +27,13 @@
     $ tar xf ./resource/geckodriver-v0.23.0-linux64.tar.gz -C .venv/bin/
     $ unzip ./resource/chromedriver_linux64.zip -d .venv/bin
 
+## Визуализация
+
+Использую библиотеку [ipyleaflet](https://github.com/jupyter-widgets/ipyleaflet). По щелчку
+по маркеру в `TextArea` выводится соответствующая строка в данных.
+
+![Визуализация местоположения](docs/figures/map.png?raw=true "Визуализация местоположения")
+
 ## Данные
 
 ### Географические объекты
