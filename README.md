@@ -89,12 +89,12 @@
 от объектов инфраструктуры, находящихся неподалеку.
 
 Из [OpenStreetMap](https://www.openstreetmap.org) с помощью
-[API Overpass](https://overpass-turbo.eu/) выгружаем интересующие объекты.
+[API Overpass](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example)
+([ru](https://wiki.openstreetmap.org/wiki/RU:Overpass_API/Language_Guide))
+выгружаем интересующие объекты (например, [bank](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbank),
+[atm](https://wiki.openstreetmap.org/wiki/RU:Tag:amenity%3Datm), [place](https://wiki.openstreetmap.org/wiki/RU:Key:place)).
 
     $ ./scripts/10-places.sh
-
-Описание некоторых объектов ([bank](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbank),
-[atm](https://wiki.openstreetmap.org/wiki/RU:Tag:amenity%3Datm), [place](https://wiki.openstreetmap.org/wiki/RU:Key:place)).
 
 Протестировать запросы можно в [Overpass-Turbo](https://overpass-turbo.eu/).
 
@@ -115,6 +115,7 @@
     );
     out center;
 
+Хорошая [статья](https://janakiev.com/blog/openstreetmap-with-python-and-overpass-api/), в которой автор объясняет основы работы с OpenStreetMap.
 
 ## Банки
 
@@ -127,17 +128,7 @@
 - [ipyleaflet: Interactive maps in the Jupyter notebook — ipyleaflet documentation](https://ipyleaflet.readthedocs.io/en/latest/index.html)
 - [mocnik-science/osm-python-tools: A library to access OpenStreetMap related services](https://github.com/mocnik-science/osm-python-tools)
 
-## OverpassQL
-
-- [Overpass API/Overpass QL - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL)
-- [Overpass API/Overpass API by Example - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example)
-- [RU:Overpass API/Language Guide - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/RU:Overpass_API/Language_Guide)
-
 ## Kaggle
 
 - [House Prices: Advanced Regression Techniques | Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/kernels)
 - [New York City Taxi Fare Prediction | Kaggle](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction/kernels)
-
-## Links
-
-- [Loading Data from OpenStreetMap with Python and the Overpass API - Parametric Thoughts](https://janakiev.com/blog/openstreetmap-with-python-and-overpass-api/)
