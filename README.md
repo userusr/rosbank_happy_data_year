@@ -130,7 +130,7 @@
 адреса для каждой отдельной точки с помощью [reverse geocoding](https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=47.88559199&lon=134.961981).
 Бонусом идет описание места.
 
-```json
+```json5
 {
     "8526.0": {
         "place_id": "93735343",
@@ -165,7 +165,7 @@
             "142.7385021"
         ],
         "record_id": 8526.0
-    },
+    }
 }
 ```
 
