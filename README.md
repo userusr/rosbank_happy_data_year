@@ -78,7 +78,43 @@
 Скачать [geckodriver](https://github.com/mozilla/geckodriver/releases)
  или [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads).
 
-    $ tar xf resource/geckodriver-v0.23.0-linux64.tar.gz -C .venv/bin/
+    $ tar xf ./resource/geckodriver-v0.23.0-linux64.tar.gz -C .venv/bin/
+    $ unzip ./resource/chromedriver_linux64.zip -d .venv/bin
+
+## Данные
+
+### Географические объекты
+
+Первое очевидное предположение - популярность места размещения банкомата зависит
+от объектов инфраструктуры, находящихся неподалеку.
+
+Из [OpenStreetMap](https://www.openstreetmap.org) с помощью
+[API Overpass](https://overpass-turbo.eu/) выгружаем интересующие объекты.
+
+    $ ./scripts/10-places.sh
+
+Описание некоторых объектов ([bank](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbank),
+[atm](https://wiki.openstreetmap.org/wiki/RU:Tag:amenity%3Datm), [place](https://wiki.openstreetmap.org/wiki/RU:Key:place)).
+
+Протестировать запросы можно в [Overpass-Turbo](https://overpass-turbo.eu/).
+
+    // Все большие магазины в выделенной области
+    [out:json];
+    (
+        node[shop=mall]({{bbox}});
+        way[shop=mall]({{bbox}});
+        relation[shop=mall]({{bbox}});
+    );
+    out center;
+
+    // Все объекты в радиусе определенной точки
+    [out:json];
+    (
+        node (around:20, 48.118297, 132.475292);
+        way (around:20, 48.118297, 132.475292);
+    );
+    out center;
+
 
 ## Банки
 
@@ -96,12 +132,6 @@
 - [Overpass API/Overpass QL - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL)
 - [Overpass API/Overpass API by Example - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_API_by_Example)
 - [RU:Overpass API/Language Guide - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/RU:Overpass_API/Language_Guide)
-
-## OpenStreetMap
-
-- [Tag:amenity=bank - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbank)
-- [RU:Tag:amenity=atm - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/RU:Tag:amenity%3Datm)
-- [RU:Key:place - OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/RU:Key:place)
 
 ## Kaggle
 
