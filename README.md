@@ -67,6 +67,12 @@
         way (around:20, 48.118297, 132.475292);
     );
     out center;
+    
+    // Все города (town)
+    [out:csv(::id, ::lat, ::lon, name)];
+    area["ISO3166-1"="RU"][admin_level=2];
+    node[place=town](area);
+    out center;
 
 Хорошая [статья](https://janakiev.com/blog/openstreetmap-with-python-and-overpass-api/), в которой автор объясняет основы работы с OpenStreetMap.
 
