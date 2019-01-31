@@ -164,7 +164,14 @@
 ]
 ```
 
+## Работы других участников
+
+- [vbugaevskii/Boosters-Rosbank-2019-01: https://boosters.pro/champ_21](https://github.com/vbugaevskii/Boosters-Rosbank-2019-01)
+- [scrimers/ml_boosters_contest_ny: boostes pro ml competitions](https://github.com/scrimers/ml_boosters_contest_ny)
+- [polosataya/Happy-Data-Year: Happy Data Year](https://github.com/polosataya/Happy-Data-Year)
+- [Hedgehogues/new-year-contest-boosters: New Year Boosters Contest](https://github.com/Hedgehogues/new-year-contest-boosters)
+
 ---
 
+- [DenisVorotyntsev/MTCGeohack.112: Public solution for MTC Geohack.112](https://github.com/DenisVorotyntsev/MTCGeohack.112)
 - [Публичная кадастровая карта](https://egrp365.ru/map/)
-
